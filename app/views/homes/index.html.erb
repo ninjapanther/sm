@@ -1,6 +1,6 @@
-<p id="notice"><%= notice %></p>
+<h1>Hi, <%= current_user.first_name if current_user %></h1>
 
-<h1>Homes</h1>
+<p id="notice"><%= notice %></p>
 
 <table>
   <thead>
@@ -10,9 +10,9 @@
   </thead>
 
   <tbody>
-  
 
-  
+
+
     <% @homes.each do |home| %>
       <tr>
         <td><%= link_to 'Show', home %></td>
