@@ -25,15 +25,11 @@
     <%= f.label :image %>
     <%= f.file_field :image %>
   </div>
-<div class="field">
-<select name="product[category]" id="category">
-  <option value="meat">meat</option>
-  <option value="cheese">cheese</option>
-  <option value="beans">beans</option>
-  <option value="fruits">fruits</option>
-  <option value="vegetables">vegetables</option>
-</select>
+  <div class="field">
+  <%= select_tag(:category_id, options_for_select(@categories)) %>
   </div>
+  
+
   <div class="actions">
     <%= f.submit %>
   </div>
