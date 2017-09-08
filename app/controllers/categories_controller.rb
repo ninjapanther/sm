@@ -5,11 +5,13 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
+    @page_title = "Woodbury Farmers Market"
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @page_title = @category.title
   end
 
   # GET /categories/new
