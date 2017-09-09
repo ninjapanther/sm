@@ -18,11 +18,6 @@ ActiveRecord::Schema.define(version: 20170821194009) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "homes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", force: :cascade do |t|
     t.string   "summary"
     t.text     "description"
