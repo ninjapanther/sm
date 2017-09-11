@@ -1,15 +1,20 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  layout "product"
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
+    @page_title = "Products"
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    @page_title = @product.title
+    @seo_keywords = @product.body
   end
 
   # GET /products/new

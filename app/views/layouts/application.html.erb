@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
    <head>
       <title>Sm</title>
       <%= csrf_meta_tags %>
@@ -19,4 +20,28 @@
          </div>
       </div>
    </body>
+=======
+  <head>
+    <title><%= @page_title %></title>
+    <%= csrf_meta_tags %>
+
+    <meta name="keywords" content="<%= @seo_keywords %>">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= render "shared/nav", location: 'top' %>
+
+    <%= login_helper %>
+
+    <%= yield %>
+
+    <%= source_helper("application") %>
+  </body>
+>>>>>>> f5e15e863e662beda79a0d8319c3ef0f49f95428
 </html>
