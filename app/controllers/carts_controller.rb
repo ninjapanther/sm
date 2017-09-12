@@ -23,6 +23,11 @@ class CartsController < ApplicationController
   # POST /carts
   def create
     @cart = Cart.new(cart_params)
+    @available_product = Cart.find_by(product:@cart.product)
+    #Check if there is a similar product in the cart alread and add the quantity in the cart to the quantity being saved
+    if !@available_product.nil?
+      redirect_to edit_cart_path(@available_product) 
+    end
 
     if @cart.save
       redirect_to @cart, notice: 'Cart was successfully created.'
