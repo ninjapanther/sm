@@ -4,6 +4,8 @@ class Cart < ApplicationRecord
 
   before_save :calculate_subtotal
 
+  validates :user,:product,:quantity,:subtotal,presence: true
+
   private
   def calculate_subtotal
     self.subtotal = self.quantity*self.product.price
