@@ -13,8 +13,8 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @page_title = @product.title
-    @seo_keywords = @product.body
+    @page_title = @product.summary
+    @seo_keywords = @product.description
   end
 
   # GET /products/new
