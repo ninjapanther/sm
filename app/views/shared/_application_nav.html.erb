@@ -1,0 +1,11 @@
+<div class="masthead clearfix">
+	<div class="inner">
+		<h3 class="masthead-brand">Woodbury Farmers Market</h3>
+		<nav class="nav nav-masthead">
+			<%= link_to "Home", root_path, class: 'nav-link' %>
+			<%= link_to "Products", products_path, class: 'nav-link' %>
+  			<%= link_to "Categories", categories_path, class: 'nav-link' %>
+  			<%= login_helper 'nav-link' %>
+		</nav>
+	</div>
+</div>
