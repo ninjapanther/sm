@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20170912141202) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string   "summary"
+    t.string   "name"
     t.text     "description"
     t.string   "image"
     t.datetime "created_at",  null: false
