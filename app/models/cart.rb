@@ -3,8 +3,9 @@ class Cart < ApplicationRecord
   belongs_to :product
 
   before_save :calculate_subtotal
+  
 
-  validates :user,:product,:quantity,:subtotal,presence: true
+  validates :user,:product,:quantity,presence: true
 
   private
   def calculate_subtotal
