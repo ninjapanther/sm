@@ -57,9 +57,6 @@ gem 'jquery-rails'
 gem 'popper_js'
 gem 'microurb_view_tool', '~> 0.1.0'
 gem 'petergate', '~> 1.7', '>= 1.7.5'
-<<<<<<< HEAD
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'kaminari', '~> 1.0', '>= 1.0.1'
-=======
->>>>>>> e177b720fd943f98c15bf47cfeb847387166ab6c

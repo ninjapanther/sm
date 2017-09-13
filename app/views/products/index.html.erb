@@ -8,12 +8,10 @@
         
           <% @products.each do |product| %>
            <%= product.image %>
+           <p class="card-text">
+            <%= product.description %>
+           </p>
           <% end %>
-        <p class="card-text">
-          <% @products.each do |product| %>
-           <%= product.description %>
-          <% end %>
-        </p>
       </div>
     </div>
     
