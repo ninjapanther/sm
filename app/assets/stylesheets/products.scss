@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+@import "font-awesome";
 
 body {
   min-height: 75rem; /* Can be removed; just added for demo purposes */
@@ -61,5 +62,13 @@ footer {
 
 footer p {
   margin-bottom: .25rem;
+}
+
+/*
+* Custom styles
+*/
+
+.social-links li a {
+  font-size: 1.5em;
 }
 
