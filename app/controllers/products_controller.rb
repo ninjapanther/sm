@@ -6,15 +6,15 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.page(params[:page]).per(9)
     @page_title = "Products"
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
-    @page_title = @product.title
-    @seo_keywords = @product.body
+    @page_title = @product.name
+    @seo_keywords = @product.description
   end
 
   # GET /products/new

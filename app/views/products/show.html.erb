@@ -1,20 +1,15 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Summary:</strong>
-  <%= @product.summary %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+  	<h2><%= @product.name %></h2>
 
-<p>
-  <strong>Image:</strong>
-  <%= @product.image %>
-  <%= image_tag(@product.image_url, width: 600) if @product.image.present? %>
-</p>
+  	<%= link_to 'Edit', edit_product_path(@product) if logged_in?(:site_admin) %>
 
-<%= link_to 'Edit', edit_product_path(@product) if logged_in?(:site_admin) %> |
-<%= link_to 'Back', products_path %>
+	<p>
+	  <%= @product.description %>
+	</p>
+
+	<p>
+	  <%= image_tag(@product.image_url, width: 356, height: 280) if @product.image.present? %>
+	</p>
+
+
