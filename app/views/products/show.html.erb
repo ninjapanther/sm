@@ -1,15 +1,24 @@
-
-
-  	<h2><%= @product.name %></h2>
-
-  	<%= link_to 'Edit', edit_product_path(@product) if logged_in?(:site_admin) %>
-
-	<p>
-	  <%= @product.description %>
-	</p>
-
-	<p>
-	  <%= image_tag(@product.image_url, width: 356, height: 280) if @product.image.present? %>
-	</p>
-
-
+<div class="album text-muted">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4 card">
+            <%= image_tag("picture_holder")%>
+         </div>
+         <div class="col-md-8 card">
+            <p><%= @product.description %></p>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-4 card">
+            <%= form_for(@cart) do |f| %>
+            <div class="form-group">
+               <%= f.number_field :quantity , class: "form-control", placeholder:"Quantity" %>
+            </div>
+            <div class="form-group">
+               <%= f.submit 'Add to cart', :class => 'btn btn-primary btn-sm' %>
+            </div>
+            <% end %>
+         </div>
+      </div>
+   </div>
+</div>
