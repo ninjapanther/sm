@@ -21,5 +21,10 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: woodbury_production
+  port: 5432
+  username: fbmloqdmsrlgdo
+  password: 99b257a28fbdd09c988d4f8f3876eba1ad9a24cb0968f5761bae5e534314c4f1
+  host: ec2-184-72-248-8.compute-1.amazonaws.com
