@@ -3,10 +3,10 @@
       <div class="row">
          <% @products.each do |product| %>
          <div class="card">
-	    <strong class="card-text"><%= product.name%></strong>
+              <strong class="card-text"><%= product.name%></strong>
               <a href="<%= product_path(product) %>"><%= image_tag("picture_holder")%><a>
-	      <p class="card-text"><%= product.price %></p>
-            <p class="card-text"><%= product.description %></p>
+	           <p class="card-text"><%= product.price %></p>
+             <p class="card-text"><%= product.description %></p>
          </div>
          <% end %>
       </div>
