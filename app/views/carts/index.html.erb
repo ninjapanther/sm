@@ -1,33 +1,36 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Carts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Product</th>
-      <th>Quantity</th>
-      <th>Subtotal</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @carts.each do |cart| %>
-      <tr>
-        <td><%= cart.user %></td>
-        <td><%= cart.product %></td>
-        <td><%= cart.quantity %></td>
-        <td><%= cart.subtotal %></td>
-        <td><%= link_to 'Show', cart %></td>
-        <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-        <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Cart', new_cart_path %>
+<div class="row">
+   <div class="col-md-3"></div>
+   <div class="col-md-6 card">
+      <table class="table table-stripped" style="color: black">
+         <thead>
+            <tr>
+               <th>Product</th>
+               <th>Quantity</th>
+               <th>Unit Price</th>
+               <th>Subtotal</th>
+               <th colspan="3"></th>
+            </tr>
+         </thead>
+         <tbody>
+		    <% total = 0%>
+            <% @carts.each do |cart| %>
+			<% total = total+ cart.subtotal%>
+            <tr scope="row">
+               <td><%= cart.product.name %></td>
+               <td><%= cart.quantity %></td>
+               <td><%= cart.product.price %></td>
+               <td><%= cart.subtotal %></td>
+               <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
+               <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+			<tr scope="row">
+			  <td colspan="3"><strong>Total</strong></td>
+			  <td><strong><%= total %></strong></td>
+			  <td colspan="2"><a href="#" class="btn btn-primary btn-sm">Checkout</a></td>
+			</tr>
+         </tbody>
+      </table>
+   </div>
+</div>
